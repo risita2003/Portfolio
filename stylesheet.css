@@ -712,147 +712,189 @@ section{
   height: 100%;
 }
 /* contact me page*/
+/* CONTACT SECTION STYLES: DESKTOP + MOBILE */
 .contact {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 3rem;
-    padding-left: 30px;
-    margin-top: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 10% 60px;
+  color: aliceblue;
+  flex-wrap: nowrap;
+  gap: 80px;
 }
 
-.contact-text h2 {
-    font-size: 90px;
-    line-height: 1;
-    text-align: center;
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.contact-text h2 span {
-    color: rgb(194, 10, 214);
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.contact-text h4 {
-    margin: 15px 0;
-    color: #f6f3f3;
-    font-size: 20px;
-    font-weight: 600;
+.contact h2 {
+  font-size: 56px;
+  font-weight: bold;
 }
 
-.contact-text p {
-    color: #f6f3f6;
-    font-size: 20px;
-    line-height: 30px;
-    margin-bottom: 2rem;
+.contact h2 span {
+  color: rgb(194, 10, 214);
+}
+
+.contact h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.contact p {
+  color: #d1d1d1;
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
 .contact-list {
-    margin-bottom: 3rem;
-}
-
-.contact-list li {
-    margin-bottom: 10px;
-    display: block;
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: white;
 }
 
 .contact-list i {
-    display: inline-block;
-    color: rgb(194, 10, 214);
-    font-size: 20px;
-    font-weight: 600;
-    transition: all 0.4s ease;
+  color: rgb(194, 10, 214);
+  margin-right: 10px;
 }
 
-.contact-list li a:hover {
-    transform: scale(1.01) translateY(-5px);
-    color: rgb(194, 10, 214);
+.contact-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-.contact-icons i {
-     display: inline-flex;
-    justify-content: center;
+.contact-icons a {
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgb(194, 10, 214);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(194, 10, 214);
+  font-size: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  background-color: rgb(194, 10, 214);
+  color: black;
+  box-shadow: 0 0 15px rgb(194, 10, 214);
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #cb238d;
+  color: white;
+  font-size: 16px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #f1f1f1;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 150px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #e100ff, #a200c2);
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #e100ff;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 0 30px #e100ff, 0 0 60px #a200c2;
+}
+
+/* MOBILE VIEW: stack layout */
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid rgb(194, 10, 214);
-    border-radius: 50%;
-    font-size: 20px;
-    color: rgb(194, 10, 214);
-    margin: 30px 15px 30px 0;
-    transition: 0.5s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
+    text-align: center;
+    padding: 60px 5% 40px;
+    gap: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .contact-icons {
+    justify-content: center;
+  }
+
+  .contact h2 {
+    font-size: 36px;
+  }
+
+  .contact-form {
+    margin-top: 40px;
+  }
 }
 
-.contact-icons i:hover {
-    background: rgb(194, 10, 214);
-    color: #050004;
-    box-shadow: 0 0 20px rgb(194, 10, 214);
-}
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 15px;
+  }
 
-.contact-form form {
-    position: relative;
-}
-
-.contact-form form input,
-.contact-form form textarea {
-    border: none;
-    outline: none;
-    width: 90%;
-    padding: 18px;
-    background: #cb238d;
-    color: #ffffff; /* White text when typing */
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    border-radius: 0.5rem;
-}
-
-/* 👇 Highlighting placeholders */
-.contact-form form input::placeholder,
-.contact-form form textarea::placeholder {
-    color: #35036b; /* Pure white placeholder */
-    font-weight: 700;
-    font-size: 1rem;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Makes it more legible */
-}
-
-.contact-form form textarea {
-    resize: none;
-    height: 220px;
-}
-
-.contact-form form .send {
-    display: inline-block;
-    padding: 14px 60px;
-    background: rgb(194, 10, 214);
-    border-radius: 40px;
-    font-size: 18px;
-    color: rgb(12, 12, 12);
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-weight: 800;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
-    box-shadow: 0 0 5px rgb(194, 10, 214),
-                0 0 25px rgb(194, 10, 214);
-}
-
-.contact-form form .send:hover {
-    box-shadow: 0 0 5px rgb(194, 10, 214),
-                0 0 25px rgb(158, 42, 171),
-                0 0 50px rgb(157, 59, 168),
-                0 0 100px rgb(158, 77, 168),
-                0 0 200px rgb(208, 134, 216);
+  .contact h2 {
+    font-size: 30px;
+  }
 }
 
 .last-text p{
     width: 100%;
     text-align: center;
     padding: 25px 0;
-    background: #050004;
+    background: #0e014b;
     font-weight: 300;
     margin-top: 70px;
 }
